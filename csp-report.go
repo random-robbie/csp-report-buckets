@@ -11,7 +11,8 @@ import (
 )
 
 
-var domainRegex = regexp.MustCompile(`([a-zA-Z0-9-]+)\.([a-z0-9-]+)?\.?s3(\.[a-z0-9-]+)?\.amazonaws\.com|blob\.core\.windows\.net|storage\.googleapis\.com`)
+var domainRegex = regexp.MustCompile(`([a-zA-Z0-9-]+)\.([a-z0-9-]+)?\.?s3(?:[-.][a-z0-9-]+)*\.amazonaws\.com|blob\.core\.windows\.net|storage\.googleapis\.com`)
+
 
 func processURL(url string) {
     // Make the request
